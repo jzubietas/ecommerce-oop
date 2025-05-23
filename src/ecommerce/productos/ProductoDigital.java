@@ -8,9 +8,17 @@ public class ProductoDigital extends Producto {
         this.urlDescarga = urlDescarga;
     }
 
+    public String getUrlDescarga() {
+        return urlDescarga;
+    }
+
+    public void setUrlDescarga(String urlDescarga) {
+        this.urlDescarga = urlDescarga;
+    }
+
     @Override
     public void mostrarDetalle() {
         super.mostrarDetalle();
-        System.out.println("Descargar en: " + urlDescarga);
+        System.out.println("Descarga en: " + urlDescarga);
     }
 }
