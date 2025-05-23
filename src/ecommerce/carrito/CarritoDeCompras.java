@@ -3,8 +3,6 @@ package ecommerce.carrito;
 import java.util.ArrayList;
 import java.util.List;
 import ecommerce.productos.Producto;
-import ecommerce.productos.ProductoDigital;
-import ecommerce.productos.ProductoFisico;
 
 public class CarritoDeCompras {
     private List<Producto> productos = new ArrayList<>();
@@ -28,5 +26,14 @@ public class CarritoDeCompras {
         for (Producto p : productos) {
             p.mostrarDetalle();
         }
+    }
+
+    public double calcularTotal() {
+        double total = 0.0;
+        for (Producto p : productos) {
+            total += p.getPrecio();
+        }
+        System.out.println("Total del carrito: $" + total);
+        return total;
     }
 }

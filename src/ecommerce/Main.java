@@ -1,21 +1,31 @@
 package ecommerce;
 
-import ecommerce.usuarios.Usuario;
-import ecommerce.usuarios.UsuarioPremium;
-import ecommerce.productos.Producto;
+import ecommerce.usuarios.Cliente;
+import ecommerce.usuarios.Administrador;
+import ecommerce.productos.ProductoFisico;
 import ecommerce.productos.ProductoDigital;
 import ecommerce.carrito.CarritoDeCompras;
 
 public class Main {
     public static void main(String[] args) {
-        Usuario usuario = new UsuarioPremium(1, "Jhonathan", "jhonathan@email.com", "secure123", 0.15);
-        Producto producto = new ProductoDigital(1, "Curso Java", "Curso de introducción a Java", 49.99, 100, "http://descarga.com/java");
+        Cliente cliente = new Cliente(1, "Laura", "laura@email.com","clave", "Libros", "Orden123");
+        Administrador admin = new Administrador(2, "Carlos", "admin@email.com","clave");
+
+        ProductoFisico libro = new ProductoFisico(1, "Libro Java", "Aprende Java", 25.99, 10, 0.5, "21x29cm");
+        ProductoDigital ebook = new ProductoDigital(2, "Ebook Python", "Curso avanzado", 15.50, 50, "https://descargas.com/python");
+
+        admin.gestionarInventario();
+        admin.crearPromocion();
 
         CarritoDeCompras carrito = new CarritoDeCompras();
-        carrito.agregarProducto(producto, 2);
+        carrito.agregarProducto(libro);
+        carrito.agregarProducto(ebook);
+        carrito.agregarProducto(100); // producto genérico por ID
+        carrito.agregarProducto("Curso Git", 12.99); // por nombre y precio
 
-        System.out.println("Usuario: " + usuario.getNombre());
-        System.out.println("Producto agregado: " + producto.getNombre());
-        System.out.println("Total del carrito: $" + carrito.calcularTotal());
+        carrito.listarProductos();
+        carrito.calcularTotal();
+
+        System.out.println("Simulación completada con éxito.");
     }
 }
