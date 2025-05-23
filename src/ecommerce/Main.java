@@ -13,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
     	Usuario usuario = new UsuarioPremium(1, "Jhonathan", "jhonathan@email.com", "secure123", 0.15);
     	
-        Cliente cliente = new Cliente(1, "Laura", "laura@email.com", "Libros", "Orden123");
-        Administrador admin = new Administrador(2, "Carlos", "admin@email.com");
+        Cliente cliente = new Cliente(1, "Laura", "laura@email.com", "email", "Libros", "Orden123");
+        Administrador admin = new Administrador(2, "Carlos", "admin@email.com","clave");
 
         Producto producto = new ProductoDigital(1, "Curso Java", "Curso de introducción a Java", 49.99, 100, "http://descarga.com/java");
         ProductoFisico libro = new ProductoFisico(1, "Libro Java", null, 25.99, 0, 0.5, "21x29cm");

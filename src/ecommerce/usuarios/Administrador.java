@@ -2,8 +2,8 @@ package ecommerce.usuarios;
 
 public class Administrador extends Usuario {
 
-    public Administrador(int id, String nombre, String email) {
-        super(id, nombre, email);
+    public Administrador(int id, String nombre, String email, String contraseña) {
+        super(id, nombre, email,contraseña);
     }
 
     public void gestionarInventario() {
