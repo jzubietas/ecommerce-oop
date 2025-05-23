@@ -7,4 +7,10 @@ public class ProductoDigital extends Producto {
         super(id, nombre, descripcion, precio, stock);
         this.urlDescarga = urlDescarga;
     }
+
+    @Override
+    public void mostrarDetalle() {
+        super.mostrarDetalle();
+        System.out.println("Descargar en: " + urlDescarga);
+    }
 }

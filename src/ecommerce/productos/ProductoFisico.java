@@ -9,4 +9,10 @@ public class ProductoFisico extends Producto {
         this.peso = peso;
         this.dimensiones = dimensiones;
     }
+
+    @Override
+    public void mostrarDetalle() {
+        super.mostrarDetalle();
+        System.out.println("Peso: " + peso + "kg, Dimensiones: " + dimensiones);
+    }
 }

@@ -15,7 +15,7 @@ public class Producto {
         this.stock = stock;
     }
 
-    public String getNombre() { return nombre; }
-    public String getDescripcion() { return descripcion; }
-    public double getPrecio() { return precio; }
+    public void mostrarDetalle() {
+        System.out.println("Producto: " + nombre + ", Precio: $" + precio);
+    }
 }
